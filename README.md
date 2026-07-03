@@ -45,7 +45,7 @@ End‑to‑end **customer churn prediction** + **BI dashboard** web app built wi
 ![Low Risk Result](assets/result-low-risk.png)
 
 ### Dashboard (additional screenshots)
-> These filenames contain spaces, which is fine on GitHub, but links must use URL encoding.
+> These filenames contain spaces, so links must use URL encoding (`%20`). The `<img>` tags below already do that.
 
 <img src="assets/Screenshot%202026-07-03%20191753.png" width="100%" />
 <img src="assets/Screenshot%202026-07-03%20191825.png" width="100%" />
