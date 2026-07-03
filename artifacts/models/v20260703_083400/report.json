@@ -1,0 +1,176 @@
+{
+  "roc_auc": 0.8587563615696607,
+  "cv_auc_during_tuning": 0.8451413929462432,
+  "threshold": 0.5469727769265609,
+  "accuracy": 0.7778566359119943,
+  "confusion_matrix": [
+    [
+      810,
+      225
+    ],
+    [
+      88,
+      286
+    ]
+  ],
+  "classification_report": {
+    "0": {
+      "precision": 0.9020044543429844,
+      "recall": 0.782608695652174,
+      "f1-score": 0.8380755302638386,
+      "support": 1035.0
+    },
+    "1": {
+      "precision": 0.5596868884540117,
+      "recall": 0.7647058823529411,
+      "f1-score": 0.6463276836158192,
+      "support": 374.0
+    },
+    "accuracy": 0.7778566359119943,
+    "macro avg": {
+      "precision": 0.7308456713984981,
+      "recall": 0.7736572890025575,
+      "f1-score": 0.742201606939829,
+      "support": 1409.0
+    },
+    "weighted avg": {
+      "precision": 0.8111408846889916,
+      "recall": 0.7778566359119943,
+      "f1-score": 0.7871786568455567,
+      "support": 1409.0
+    }
+  },
+  "best_params": {
+    "iterations": 588,
+    "depth": 4,
+    "learning_rate": 0.03970480221867906,
+    "l2_leaf_reg": 7.690036006339314,
+    "random_strength": 4.798586975954253,
+    "bagging_temperature": 0.45658882212354573
+  },
+  "n_trials": 40,
+  "n_folds_cv": 5,
+  "feature_count": 29,
+  "cat_feature_count": 16,
+  "feature_importance": [
+    {
+      "Feature Id": "Contract",
+      "Importances": 17.76336027809461
+    },
+    {
+      "Feature Id": "ContractMonths",
+      "Importances": 13.020201451692294
+    },
+    {
+      "Feature Id": "tenure",
+      "Importances": 8.68294063574966
+    },
+    {
+      "Feature Id": "InternetService",
+      "Importances": 6.948600904954052
+    },
+    {
+      "Feature Id": "LogMonthlyCharges",
+      "Importances": 6.50891261534808
+    },
+    {
+      "Feature Id": "TotalCharges",
+      "Importances": 5.7818249847791545
+    },
+    {
+      "Feature Id": "MonthlyCharges",
+      "Importances": 5.777237354155092
+    },
+    {
+      "Feature Id": "AvgMonthlyCharges",
+      "Importances": 4.440378163030312
+    },
+    {
+      "Feature Id": "TenureBand",
+      "Importances": 4.095093490289382
+    },
+    {
+      "Feature Id": "PaymentMethod",
+      "Importances": 4.065988846744619
+    },
+    {
+      "Feature Id": "PaperlessBilling",
+      "Importances": 3.2805313002522967
+    },
+    {
+      "Feature Id": "LogTotalCharges",
+      "Importances": 3.22875238601131
+    },
+    {
+      "Feature Id": "InternetAddOnCount",
+      "Importances": 2.2483067149729314
+    },
+    {
+      "Feature Id": "HasInternet",
+      "Importances": 2.012272294544122
+    },
+    {
+      "Feature Id": "ChargeRatio",
+      "Importances": 1.968100756318079
+    },
+    {
+      "Feature Id": "ChargeGap",
+      "Importances": 1.8292257281400641
+    },
+    {
+      "Feature Id": "OnlineSecurity",
+      "Importances": 1.7835456350938448
+    },
+    {
+      "Feature Id": "TechSupport",
+      "Importances": 1.7328165401100748
+    },
+    {
+      "Feature Id": "StreamingTV",
+      "Importances": 0.9568862942236569
+    },
+    {
+      "Feature Id": "PhoneService",
+      "Importances": 0.8541823115764846
+    },
+    {
+      "Feature Id": "SeniorCitizen",
+      "Importances": 0.792467768162595
+    },
+    {
+      "Feature Id": "MultipleLines",
+      "Importances": 0.7372018234176878
+    },
+    {
+      "Feature Id": "StreamingMovies",
+      "Importances": 0.6409165124042757
+    },
+    {
+      "Feature Id": "DeviceProtection",
+      "Importances": 0.23179440182060246
+    },
+    {
+      "Feature Id": "gender",
+      "Importances": 0.2146329540981028
+    },
+    {
+      "Feature Id": "OnlineBackup",
+      "Importances": 0.202359514589285
+    },
+    {
+      "Feature Id": "HasFamily",
+      "Importances": 0.11895112682698362
+    },
+    {
+      "Feature Id": "Dependents",
+      "Importances": 0.08251721260036292
+    },
+    {
+      "Feature Id": "Partner",
+      "Importances": 0.0
+    }
+  ],
+  "version": "v20260703_083400",
+  "task_type": "GPU",
+  "devices": "0"
+}

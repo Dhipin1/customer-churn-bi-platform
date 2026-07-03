@@ -1,0 +1,12 @@
+.venv/
+__pycache__/
+*.pyc
+.DS_Store
+*.log
+
+# Only keep the best model (remove old versions)
+artifacts/models/v*/
+!artifacts/models/v20260703_083400/
+
+# Keep only active model pointer
+artifacts/predictions.sqlite

@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="row">
+  <div class="col-lg-10">
+    <div class="card shadow-sm">
+      <div class="card-body">
+        <div class="d-flex justify-content-between align-items-start">
+          <div>
+            <h4 class="mb-1">Customer Churn Prediction</h4>
+            <p class="text-muted mb-0">Enter features to get churn probability + SHAP explanation.</p>
+          </div>
+          <div class="text-end small text-muted">
+            Active model: <code>{{ model_version }}</code>
+          </div>
+        </div>
+
+        <hr/>
+
+        <form method="post" action="/predict" class="row g-3">
+          {% for col in num_cols %}
+            <div class="col-md-4">
+              <label class="form-label">{{ col }}</label>
+              <input class="form-control" type="number" step="any" name="{{ col }}" value="{{ defaults[col] }}" required>
+            </div>
+          {% endfor %}
+
+          {% for col in cat_cols %}
+            <div class="col-md-4">
+              <label class="form-label">{{ col }}</label>
+              <select class="form-select" name="{{ col }}" required>
+                {% for opt in options[col] %}
+                  <option value="{{ opt }}" {% if defaults[col]==opt %}selected{% endif %}>{{ opt }}</option>
+                {% endfor %}
+              </select>
+            </div>
+          {% endfor %}
+
+          <div class="col-12">
+            <button class="btn btn-primary">Predict churn risk</button>
+            <a class="btn btn-outline-secondary" href="/dashboard">View dashboard</a>
+          </div>
+        </form>
+
+        <hr class="my-4"/>
+        <p class="small text-muted mb-0">
+          Train first: <code>python -m src.train</code>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

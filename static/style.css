@@ -1,0 +1,14 @@
+.metric {
+  background: #f8f9fa;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  padding: 14px;
+}
+.metric-value {
+  font-size: 28px;
+  font-weight: 700;
+}
+.metric-label {
+  color: #666;
+  font-size: 13px;
+}

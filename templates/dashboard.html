@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="row g-3">
+  <div class="col-12">
+    <div class="card shadow-sm">
+      <div class="card-body">
+        <div class="d-flex justify-content-between align-items-start">
+          <div>
+            <h4 class="mb-1">BI Dashboard</h4>
+            <p class="text-muted mb-0">Dataset analytics + recent predictions (SQLite).</p>
+          </div>
+          <div class="small text-muted">
+            Active model: <code>{{ active_version }}</code>
+          </div>
+        </div>
+
+        <div class="row mt-3">
+          <div class="col-md-4">
+            <div class="metric">
+              <div class="metric-value">{{ n_customers }}</div>
+              <div class="metric-label">Customers</div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="metric">
+              <div class="metric-value">{{ churn_rate }}%</div>
+              <div class="metric-label">Overall churn rate</div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="metric">
+              <div class="metric-value">{{ recent|length }}</div>
+              <div class="metric-label">Recent predictions logged</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-12">{{ chart1 | safe }}</div>
+  <div class="col-lg-6">{{ chart2 | safe }}</div>
+  <div class="col-lg-6">{{ chart3 | safe }}</div>
+  <div class="col-lg-6">{{ chart4 | safe }}</div>
+  <div class="col-lg-6">{{ chart5 | safe }}</div>
+
+  <div class="col-12">
+    <div class="card shadow-sm">
+      <div class="card-body">
+        <h5>Recent Predictions (SQLite)</h5>
+        <div class="table-responsive">
+          <table class="table table-sm">
+            <thead>
+              <tr>
+                <th>Time (UTC)</th>
+                <th class="text-end">Prob</th>
+                <th class="text-end">Label</th>
+                <th>Model</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for r in recent %}
+              <tr>
+                <td>{{ r.ts }}</td>
+                <td class="text-end">{{ r.churn_prob | round(4) }}</td>
+                <td class="text-end">{{ r.churn_label }}</td>
+                <td><code>{{ r.model_version }}</code></td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+
+        <p class="small text-muted mb-0">
+          Admin: <code>GET /admin/models</code>, <code>POST /admin/activate/{version}</code>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

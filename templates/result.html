@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="row g-3">
+  <div class="col-lg-6">
+    <div class="card shadow-sm">
+      <div class="card-body">
+        <div class="d-flex justify-content-between">
+          <h4>Prediction Result</h4>
+          <div class="small text-muted">Model: <code>{{ model_version }}</code></div>
+        </div>
+
+        <div class="mt-3">
+          <div class="display-6">{{ (prob*100) | round(2) }}%</div>
+          <div class="text-muted">Churn Probability</div>
+        </div>
+
+        <div class="mt-3">
+          <span class="badge {% if label==1 %}bg-danger{% else %}bg-success{% endif %} p-2">
+            {% if label==1 %}High Risk (Churn=1){% else %}Low Risk (Churn=0){% endif %}
+          </span>
+          <div class="small text-muted mt-1">Decision threshold: {{ threshold | round(3) }}</div>
+        </div>
+
+        <div class="mt-4">
+          <a class="btn btn-primary" href="/">Predict another</a>
+          <a class="btn btn-outline-secondary" href="/dashboard">Dashboard</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-lg-6">
+    <div class="card shadow-sm">
+      <div class="card-body">
+        <h5>Top Explanation Factors (SHAP)</h5>
+        <p class="text-muted small mb-2">Positive increases churn risk; negative decreases.</p>
+        <div class="table-responsive">
+          <table class="table table-sm">
+            <thead>
+              <tr>
+                <th>Feature</th>
+                <th>Value</th>
+                <th class="text-end">Contribution</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for f in factors %}
+              <tr>
+                <td>{{ f.feature }}</td>
+                <td>{{ f.value }}</td>
+                <td class="text-end {% if f.contribution >= 0 %}text-danger{% else %}text-success{% endif %}">
+                  {{ f.contribution | round(4) }}
+                </td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+
+        <details class="mt-3">
+          <summary class="small text-muted">View submitted payload</summary>
+          <pre class="small bg-light p-2 border rounded">{{ payload }}</pre>
+        </details>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
