@@ -45,7 +45,6 @@ End‑to‑end **customer churn prediction** + **BI dashboard** web app built wi
 <img src="assets/result-low-risk.png" width="100%" alt="Low Risk Result" />
 
 ### Dashboard (additional screenshots)
-> These filenames contain spaces, so links must use URL encoding (`%20`). The `<img>` tags below already do that.
 
 <img src="assets/Screenshot%202026-07-03%20191753.png" width="100%" alt="Dashboard Screenshot 1" />
 <img src="assets/Screenshot%202026-07-03%20191825.png" width="100%" alt="Dashboard Screenshot 2" />
