@@ -1,68 +1,60 @@
-## AI-Powered Customer Churn Prediction & BI Platform (10/10)
+# AI‑Powered Customer Churn Prediction & Business Intelligence Platform
 
-### Features
-- CatBoost churn model + Optuna tuning
-- SHAP explainability per prediction
-- FastAPI web app (no Streamlit) + HTML UI
-- BI dashboard (Plotly)
-- SQLite prediction logging
-- Model versioning (each training run becomes a new version; set active model)
-- Monitoring: Prometheus metrics + JSON logs
-- Real-time inference: WebSocket endpoint
-- Docker + docker-compose (includes Prometheus)
-- CI: GitHub Actions runs tests
+End‑to‑end **customer churn prediction** + **BI dashboard** web app built with **FastAPI** and **CatBoost**, including **SHAP explainability**, **model versioning**, **monitoring (Prometheus)**, and **real‑time inference (WebSocket)**.
+
+## Live Demo
+- (Add your Render link here after deployment)
+- Example: https://customer-churn-bi-platform.onrender.com
+
+## Repository
+- https://github.com/Dhipin1/customer-churn-bi-platform
 
 ---
 
-## 1) Setup (local in VS Code)
-
-### Create venv
-python -m venv .venv
-
-### Activate
-# Windows:
-.venv\Scripts\activate
-# macOS/Linux:
-source .venv/bin/activate
-
-### Install deps
-pip install -r requirements.txt
-
-### Put dataset
-Place the CSV here:
-data/WA_Fn-UseC_-Telco-Customer-Churn.csv
-
-### Train model (creates version + sets it active)
-python -m src.train
-
-### Run app
-uvicorn src.main:app --reload
-
-Open:
-- App: http://127.0.0.1:8000
-- Dashboard: http://127.0.0.1:8000/dashboard
-- Swagger: http://127.0.0.1:8000/docs
-- Health: http://127.0.0.1:8000/health
-- Metrics (Prometheus): http://127.0.0.1:8000/metrics
-- WebSocket: ws://127.0.0.1:8000/ws/predict
+## Key Features
+- **Churn Prediction Model**: CatBoost classifier (+ Optuna hyperparameter tuning)
+- **Explainability**: SHAP feature contributions per prediction (CatBoost built‑in)
+- **Web App (No Streamlit)**: FastAPI + Jinja2 + Bootstrap UI
+- **BI Dashboard**: Plotly charts (distribution, churn rate by segments, tenure bands, etc.)
+- **Logging**: Stores predictions to **SQLite**
+- **Model Versioning**: Each training run saved as a new version; supports switching active model
+- **Monitoring**: Prometheus metrics endpoint + JSON logs
+- **Real‑Time Inference**: WebSocket prediction endpoint
+- **MLOps/DevOps**: Docker + docker-compose + GitHub Actions CI
 
 ---
 
-## 2) Docker (App + Prometheus)
-docker compose up --build
-
-- App: http://localhost:8000
-- Prometheus: http://localhost:9090
+## Tech Stack
+- **Backend**: FastAPI, Uvicorn, Pydantic, Jinja2
+- **ML**: CatBoost, Optuna, Scikit-learn, Pandas, NumPy
+- **Explainability**: SHAP (via CatBoost)
+- **Dashboard**: Plotly
+- **Storage**: SQLite
+- **Monitoring**: prometheus-client
+- **DevOps**: Docker, GitHub Actions
 
 ---
 
-## 3) Model versioning
-Training creates:
-artifacts/models/vYYYYMMDD_HHMMSS/
+## Screenshots
 
-Active model pointer:
-artifacts/active_model.json
+### Prediction Form
+![Prediction Form](assets/predict-form1.png)
 
-Admin endpoints:
-- GET  /admin/models
-- POST /admin/activate/{version}
+### Prediction Results
+![High Risk Result](assets/result-high-risk.png)
+![Low Risk Result](assets/result-low-risk.png)
+
+### Dashboard (additional screenshots)
+> These filenames contain spaces, which is fine on GitHub, but links must use URL encoding.
+
+<img src="assets/Screenshot%202026-07-03%20191753.png" width="100%" />
+<img src="assets/Screenshot%202026-07-03%20191825.png" width="100%" />
+<img src="assets/Screenshot%202026-07-03%20191835.png" width="100%" />
+<img src="assets/Screenshot%202026-07-03%20192603.png" width="100%" />
+<img src="assets/Screenshot%202026-07-03%20192530.png" width="100%" />
+<img src="assets/Screenshot%202026-07-03%20192543.png" width="100%" />
+<img src="assets/Screenshot%202026-07-03%20192553.png" width="100%" />
+
+---
+
+## Project Structure (High Level)
