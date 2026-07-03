@@ -10,3 +10,5 @@ artifacts/models/v*/
 
 # Keep only active model pointer
 artifacts/predictions.sqlite
+
+catboost_info/
