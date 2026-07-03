@@ -38,22 +38,22 @@ End‑to‑end **customer churn prediction** + **BI dashboard** web app built wi
 ## Screenshots
 
 ### Prediction Form
-![Prediction Form](assets/predict-form1.png)
+<img src="assets/predict-form1.png" width="100%" alt="Prediction Form" />
 
 ### Prediction Results
-![High Risk Result](assets/result-high-risk.png)
-![Low Risk Result](assets/result-low-risk.png)
+<img src="assets/result-high-risk.png" width="100%" alt="High Risk Result" />
+<img src="assets/result-low-risk.png" width="100%" alt="Low Risk Result" />
 
 ### Dashboard (additional screenshots)
-> These filenames contain spaces, which is fine on GitHub, but links must use URL encoding.
+> These filenames contain spaces, so links must use URL encoding (`%20`). The `<img>` tags below already do that.
 
-<img src="assets/Screenshot%202026-07-03%20191753.png" width="100%" />
-<img src="assets/Screenshot%202026-07-03%20191825.png" width="100%" />
-<img src="assets/Screenshot%202026-07-03%20191835.png" width="100%" />
-<img src="assets/Screenshot%202026-07-03%20192603.png" width="100%" />
-<img src="assets/Screenshot%202026-07-03%20192530.png" width="100%" />
-<img src="assets/Screenshot%202026-07-03%20192543.png" width="100%" />
-<img src="assets/Screenshot%202026-07-03%20192553.png" width="100%" />
+<img src="assets/Screenshot%202026-07-03%20191753.png" width="100%" alt="Dashboard Screenshot 1" />
+<img src="assets/Screenshot%202026-07-03%20191825.png" width="100%" alt="Dashboard Screenshot 2" />
+<img src="assets/Screenshot%202026-07-03%20191835.png" width="100%" alt="Dashboard Screenshot 3" />
+<img src="assets/Screenshot%202026-07-03%20192603.png" width="100%" alt="Dashboard Screenshot 4" />
+<img src="assets/Screenshot%202026-07-03%20192530.png" width="100%" alt="Dashboard Screenshot 5" />
+<img src="assets/Screenshot%202026-07-03%20192543.png" width="100%" alt="Dashboard Screenshot 6" />
+<img src="assets/Screenshot%202026-07-03%20192553.png" width="100%" alt="Dashboard Screenshot 7" />
 
 ---
 
