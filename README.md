@@ -38,7 +38,7 @@ End‑to‑end **customer churn prediction** + **BI dashboard** web app built wi
 ## Screenshots
 
 ### Prediction Form
-<img src="assets/predict-form1.png" width="100%" alt="Prediction Form" />
+<img src="assets/predict-form.png" width="100%" alt="Prediction Form" />
 
 ### Prediction Results
 <img src="assets/result-high-risk.png" width="100%" alt="High Risk Result" />
